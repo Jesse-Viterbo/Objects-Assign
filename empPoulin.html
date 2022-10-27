@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en_us">
+    <head>
+        <title>Employee Info Form</title>
+        <script src="empPoulin.js"></script>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="body">
+            <div class="container-50">
+                <h2 id="motto">Employee Info</h2>
+            </div>
+            
+           <br/>
+            <hr>
+            <div id="employeeForm">
+                <h3>Employee Info</h3><br>
+                <label for="empName">Name</label><br>
+                <input type="text" id="empName" name="empName"><br>
+    
+                <label for="empId">ID Number</label><br>
+                <input type="text" id="empId" name="empId"><br>
+
+                <label for="shiftNum">Shift Number</label><br>
+                <input type="text" id="shiftNum" name="shiftNum"><br>
+
+                <label for="payRate">Hourly Rate</label><br>
+                <input type="text" id="payRate" name="payRate"><br>
+    
+                <input id="submitEmployeeInfo" type="submit" value="Submit" onClick="calculate()">
+                <div id="formResults">
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            - Employee Form -
+        </footer>
+    </body>
+</html>
