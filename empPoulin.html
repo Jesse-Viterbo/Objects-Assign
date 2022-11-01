@@ -16,18 +16,18 @@
             <div id="employeeForm">
                 <h3>Employee Info</h3><br>
                 <label for="empName">Name</label><br>
-                <input type="text" id="empName" name="empName"><br>
+                <input type="text" pattern="\d*" id="empName" name="empName"><br>
     
                 <label for="empId">ID Number</label><br>
-                <input type="text" id="empId" name="empId"><br>
+                <input type="number" id="empId" name="empId"><br>
 
                 <label for="shiftNum">Shift Number</label><br>
-                <input type="text" id="shiftNum" name="shiftNum"><br>
+                <input type="number" id="shiftNum" name="shiftNum" min="1" max="2"><br>
 
                 <label for="payRate">Hourly Rate</label><br>
-                <input type="text" id="payRate" name="payRate"><br>
+                <input type="number" id="payRate" name="payRate"><br>
     
-                <input id="submitEmployeeInfo" type="submit" value="Submit" onClick="calculate()">
+                <input id="submitEmployeeInfo" type="submit" value="Submit" onClick="submit()">
                 <div id="formResults">
                     
                 </div>
