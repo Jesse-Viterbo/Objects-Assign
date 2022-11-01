@@ -1,8 +1,8 @@
 //Store data for Employee Name and ID Number
 class Employee {
     constructor(empName, empId) {
-        this._empName = empName;
-        this._empId = empId;
+        this._empName   = empName;
+        this._empId     = empId;
     }
     /*Get Employee Name */
     get empName() {
@@ -25,8 +25,8 @@ class Employee {
 class ProductionWorker extends Employee {
     constructor(empName, empId, shiftNum, payRate) {
         super(empName, empId);
-        this._shiftNum = shiftNum;
-        this._payRate = payRate;
+        this._shiftNum  = shiftNum;
+        this._payRate   = payRate;
     }
     /*Get Shift Number */
     get shiftNum() {
@@ -53,13 +53,20 @@ function submit() {
     let shiftNum    = Number(document.getElementById('shiftNum').value);
     let payRate     = Number(document.getElementById('payRate').value);
     
-    //const prodWorker = new ProductionWorker(empName, empId, shiftNum, payRate);
+    //-initialzing prodWorker with all values set
+    const prodWorker = new ProductionWorker(empName, empId, shiftNum, payRate);
+
+    //-initializng prodWorker without any values, set values using setters
+    /*
     const prodWorker = new ProductionWorker();
     prodWorker.empName  = empName;
     prodWorker.empId    = empId;
     prodWorker.shiftNum = shiftNum;
     prodWorker.payRate  = payRate;
+    */
+
     //https://natclark.com/tutorials/javascript-formatting-currencies/
+    //Format payRate to USD
     const payRateFormatted = new Intl.NumberFormat(`en-US`, {
         currency: `USD`,
         style: 'currency',
@@ -68,10 +75,12 @@ function submit() {
     /*Output format-  
                 Name: (Employee Name)
                 ID: (Employee ID)
-                Shift Number: (Shift Number)
-                (Pay Rate)
-    
+                Shift: (Shift Number)
+                Hourly Pay Rate: (Pay Rate)
     */
     output = "Name: " + prodWorker.empName + "<br>" + "ID: " + prodWorker.empId + "<br>" + "Shift: " + prodWorker.shiftNum + "<br>" + "Hourly Pay Rate: " + payRateFormatted;
     document.getElementById('formResults').innerHTML = output;
+}
+function clearForm() {
+    document.getElementById('formResults').innerHTML = "";
 }
