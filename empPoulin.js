@@ -49,9 +49,11 @@ class ProductionWorker extends Employee {
 //Take Employee Name, Employee ID, shift # and pay rate from html form
 function submit() {
     let empName     = document.getElementById('empName').value;
-    let empId       = Number(document.getElementById('empId').value);
-    let shiftNum    = Number(document.getElementById('shiftNum').value);
-    let payRate     = Number(document.getElementById('payRate').value);
+    let empId       = document.getElementById('empId').value;
+    let shiftNum    = document.getElementById('shiftNum').value;
+    let payRate     = document.getElementById('payRate').value;
+    
+
     
     //-initialzing prodWorker with all values set
     const prodWorker = new ProductionWorker(empName, empId, shiftNum, payRate);
@@ -64,21 +66,22 @@ function submit() {
     prodWorker.shiftNum = shiftNum;
     prodWorker.payRate  = payRate;
     */
-
+    
     //https://natclark.com/tutorials/javascript-formatting-currencies/
-    //Format payRate to USD
-    const payRateFormatted = new Intl.NumberFormat(`en-US`, {
-        currency: `USD`,
-        style: 'currency',
-    }).format(prodWorker.payRate);
+        //Format payRate to USD
+        const payRateFormatted = new Intl.NumberFormat(`en-US`, {
+            currency: `USD`,
+            style: 'currency',
+        }).format(prodWorker.payRate);
     
     /*Output format-  
+                Production Worker Information:
                 Name: (Employee Name)
                 ID: (Employee ID)
                 Shift: (Shift Number)
                 Hourly Pay Rate: (Pay Rate)
     */
-    output = "Name: " + prodWorker.empName + "<br>" + "ID: " + prodWorker.empId + "<br>" + "Shift: " + prodWorker.shiftNum + "<br>" + "Hourly Pay Rate: " + payRateFormatted;
+    output = "Production Worker Information: " + "<br>" + "Name: " + prodWorker.empName + "<br>" + "ID: " + prodWorker.empId + "<br>" + "Shift: " + prodWorker.shiftNum + "<br>" + "Hourly Pay Rate: " + payRateFormatted;
     document.getElementById('formResults').innerHTML = output;
 }
 function clearForm() {
